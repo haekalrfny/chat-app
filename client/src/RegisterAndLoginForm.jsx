@@ -27,7 +27,7 @@ const RegisterAndLoginForm = () => {
     setLoading(true);
 
     axios
-      .post(`https://chatkal-api.vercel.app/api/${url}`, { username, password })
+      .post(`https://chatkal-api.vercel.app/api${url}`, { username, password })
       .then((response) => {
         setLoggedInUsername(username);
         setId(response.data.id);
