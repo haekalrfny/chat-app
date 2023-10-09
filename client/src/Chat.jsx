@@ -8,7 +8,6 @@ import Cookies from "js-cookie";
 import {
   HiOutlineBars3,
   HiOutlineChatBubbleOvalLeftEllipsis,
-  HiOutlineChevronLeft,
   HiOutlineMagnifyingGlass,
   HiOutlinePaperAirplane,
   HiOutlinePaperClip,
