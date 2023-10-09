@@ -97,6 +97,7 @@ app.get("/profile", (req, res) => {
 
 // Login
 app.post('/login', async (req,res) => {
+  res.json("Login")
   const {username,password} = req.body
   const foundUser = await User.findOne({username})
   if (foundUser) {
