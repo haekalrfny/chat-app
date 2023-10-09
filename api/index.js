@@ -59,8 +59,8 @@ async function getUserDataFromRequest(req) {
 }
 
 // Testing
-app.get("/test", (req, res) => {
-  res.json("test ok");
+app.get("/", (req, res) => {
+  res.json("Hi! People");
 });
 
 // Show Message
