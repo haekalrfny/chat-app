@@ -7,7 +7,7 @@ import cors from "cors";
 import bcrypt from "bcryptjs"
 import User from "./models/User.js";
 import Message from "./models/Message.js"
-import ws, {WebSocketServer, WebSocket} from "ws"
+import ws, {WebSocketServer} from "ws"
 import fs from "fs"
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
