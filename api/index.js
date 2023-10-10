@@ -20,7 +20,7 @@ dotenv.config();
 const jwtSecret = "dwadjawdkjj2103fdmmddwkad2";
 const mongoUrl = "mongodb+srv://mernchat:GGEapYGMx97mg7oU@cluster0.kbhywfz.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
 const clientUrl = "https://chatkal-client.vercel.app";
-const clientServerUrl = process.env.CLIENT_SERVER_URL;
+// const clientServerUrl = process.env.CLIENT_SERVER_URL;
 const port = 4040
 const bcryptSalt = bcrypt.genSaltSync(10)
 const app = express();
