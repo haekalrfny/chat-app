@@ -42,10 +42,9 @@ app.use(
   cors({
     origin: "*",
     methods: ["POST", "GET"],
-    credentials: true,
+    // credentials: true,
   })
 );
-
 
 // Get user from token
 async function getUserDataFromRequest(req) {
