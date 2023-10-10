@@ -40,11 +40,12 @@ app.use(express.json());
 app.use(cookieParser())
 app.use(
   cors({
-    origin: clientUrl,
+    origin: "*",
     methods: ["POST", "GET"],
     credentials: true,
   })
 );
+
 
 // Get user from token
 async function getUserDataFromRequest(req) {
