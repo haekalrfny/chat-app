@@ -17,9 +17,9 @@ const __dirname = dirname(__filename);
 
 // .env
 dotenv.config();
-const jwtSecret = process.env.JWT_SECRET;
-const mongoUrl = process.env.MONGO_URL;
-const clientUrl = process.env.CLIENT_URL;
+const jwtSecret = "dwadjawdkjj2103fdmmddwkad2";
+const mongoUrl = "mongodb+srv://mernchat:GGEapYGMx97mg7oU@cluster0.kbhywfz.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
+const clientUrl = "https://chatkal-client.vercel.app";
 const clientServerUrl = process.env.CLIENT_SERVER_URL;
 const port = 4040
 const bcryptSalt = bcrypt.genSaltSync(10)
@@ -40,7 +40,7 @@ app.use(express.json());
 app.use(cookieParser())
 app.use(
   cors({
-    origin: clientServerUrl,
+    origin: clientUrl,
     methods: ["POST", "GET"],
     credentials: true,
   })
