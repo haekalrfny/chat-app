@@ -25,7 +25,6 @@ const port = 4040
 const bcryptSalt = bcrypt.genSaltSync(10)
 const app = express();
 
-
 // Connect to MongoDB
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -40,9 +39,9 @@ app.use(express.json());
 app.use(cookieParser())
 app.use(
   cors({
-    origin: "*",
+    origin: clientUrl,
     methods: ["POST", "GET"],
-    // credentials: true,
+    credentials: true,
   })
 );
 
@@ -50,6 +49,7 @@ app.use(
 async function getUserDataFromRequest(req) {
   return new Promise((resolve, reject) =>{
     const token = req.cookies?.token;
+    console.log(token)
     if (token) {
       jwt.verify(token, jwtSecret, {}, (err, userData) => {
         if (err) throw err;
