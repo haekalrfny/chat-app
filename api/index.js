@@ -7,7 +7,7 @@ import cors from "cors";
 import bcrypt from "bcryptjs"
 import User from "./models/User.js";
 import Message from "./models/Message.js"
-import ws, {WebSocketServer} from "ws"
+import ws, {WebSocketServer, WebSocket} from "ws"
 import fs from "fs"
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
@@ -141,7 +141,7 @@ app.post("/register", async (req, res) => {
 const server = app.listen(port)
 
 // Connect Server to Web Socket
-const wss = new WebSocketServer({server})
+const wss = new WebSocketServer({server: app})
 wss.on('connection', (connection, req) => {
   const notifyAboutOnlinePeople = () => {
     [...wss.clients].forEach((client) => {
