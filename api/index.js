@@ -141,7 +141,7 @@ app.post("/register", async (req, res) => {
 const server = app.listen(port)
 
 // Connect Server to Web Socket
-const wss = new WebSocketServer({server:"https://chatkal-api.vercel.app"})
+const wss = new WebSocketServer({server})
 wss.on('connection', (connection, req) => {
   const notifyAboutOnlinePeople = () => {
     [...wss.clients].forEach((client) => {
