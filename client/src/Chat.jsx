@@ -37,7 +37,7 @@ const Chat = () => {
   }, [selectedUserId]);
 
   const connectToWs = () => {
-    const ws = new WebSocket("ws://localhost:4040");
+    const ws = new WebSocket("ws://chatkal-api.vercel.app");
     setWs(ws);
     ws.addEventListener("message", handleMessage);
     ws.addEventListener("close", () => {
