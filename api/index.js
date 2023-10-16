@@ -17,9 +17,9 @@ const __dirname = dirname(__filename);
 
 // .env
 dotenv.config();
-const jwtSecret = "dwadjawdkjj2103fdmmddwkad2";
-const mongoUrl = "mongodb+srv://mernchat:GGEapYGMx97mg7oU@cluster0.kbhywfz.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
-const clientUrl = "https://chatkal-client.vercel.app";
+const jwtSecret = process.env.JWT_SECRET;
+const mongoUrl = process.env.MONGO_URL
+const clientUrl = process.env.CLIENT_URL
 // const clientServerUrl = process.env.CLIENT_SERVER_URL;
 const port = 4040
 const bcryptSalt = bcrypt.genSaltSync(10)
@@ -78,13 +78,13 @@ const messages = await Message.find({
 res.json(messages)
 })
 
-// People
+// Show People
 app.get("/people", async (req, res) => {
  const users = await User.find({}, {"_id":1,username:1})
  res.json(users)
 })
 
-// Profile
+// Profile Validation
 app.get("/profile", (req, res) => {
   const token = req.cookies?.token
   if (token) {
@@ -140,7 +140,7 @@ app.post("/register", async (req, res) => {
 // Run Server
 const server = app.listen(port)
 
-// Connect Server to Web Socket
+// Connect WebSocket Server to Client
 const wss = new WebSocketServer({server})
 wss.on('connection', (connection, req) => {
   const notifyAboutOnlinePeople = () => {
